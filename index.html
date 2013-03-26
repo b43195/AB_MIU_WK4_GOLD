@@ -1,0 +1,406 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>The Peep Cheat Sheet</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+<!--Main Page-->
+	<div data-role="page" id="homePage" data-theme="a" style="background: black url(images/background.jpg) no-repeat">
+		<!-- <div data-role="header" data-position="fixed">
+			<h1>Home</h1>
+		</div> -->
+		<div data-role="content" align="center">
+			<a href="#addPeepPage"><img src="images/pcs_feature.png"/></a>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#addPeepPage"data-transition="slidefade">Add Peep</a></li>
+				<li><a href="#catagoriesPage"data-transition="slidefade">Browse Peeps</a></li>
+			</ul>
+			<div data-role="collapsible" data-collapsed="true" data-theme="a">
+			<h3>Recently Added Peeps</h3>
+			<ul data-role="listview" data-inset="true">
+				<li><img src="images/Family.png">
+				<h3>Andisheh Bassiri</h3>
+				<p>Company: Post Op Media<br>
+					added: 03/18/13</p>
+				</li>
+				<li><img src="images/Friend.png">
+				<h3>James Only</h3>
+				<p>Company: FL Hospital Center<br>
+					added: 03/12/13</p>
+				</li>	
+				<li><img src="images/Co-Worker.png">
+				<h3>Sean Callahan</h3>
+				<p>Company: Contractor<br>
+					added: 02/28/13</p>
+				</li>
+				<li><img src="images/Aquentence.png">
+				<h3>Tara Mills</h3>
+				<p>Company: Lynda.com<br>
+					added: 02/20/13</p>
+				</li>
+				<li><img src="images/Frienemy.png">
+				<h3>Marty McFly</h3>
+				<p>Company: Furture Corp<br>
+					added: 02/05/13</p>
+				</li>	
+			</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+<!--Add Peep Page-->
+	<div data-role="page" id="addPeepPage" data-theme="a" add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Add a Peep</h1>
+		</div>
+
+		<div data-role="content">
+			<div id="peepForm">
+				<div data-role="controlgroup" data-type="horizontal" align="center">
+					<a href="#searchPage" id="displayData" data-role="button">Show Data</a>  
+					<a href="#" id="cleardata" data-role="button">Clear All</a>
+				</div>
+				<p>*starred items are required.</p>
+			</div>
+			<form action="" method="post" id="addPeepForm">
+							<div data-role="fieldcontain">
+								<label for"fname">First Name   *</label>
+								<input type="text" name="fname" id="fname" placeholder="First Name" class="required"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"lname">Last Name   *</label>
+								<input type="text" name="lname" id="lname" placeholder="Last Name" class="required"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"company">Company</label>
+								<input type="text" name="company "id="company" placeholder="Company Name"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"pnum">Phone Number   *</label>
+								<input type="text" name="pnum" id="pnum" placeholder="XXX-XXX-XXXX" class="required"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"email">E-Mail   *</label>
+								<input type="text" placeholder="peep@peepcheat.com" name="email" id="email" class="required email"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"addy">Address</label>
+								<input type="text" name="addy" id="addy"/>	
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for="bday">Birthday   *</label>
+								<input type="date" id="bday" value="1980-01-01" class="required"/>
+							</div>
+
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<legend> Rock, Paper, Scissor?   *</legend>
+									<input type="checkbox" value="Rock" name="rps" id="rock" class="required" />
+									<label for="rock">Rock</label>
+									<input type="checkbox" value="Paper" name="rps" id="paper"/>
+									<label for="paper">Paper</label>
+									<input type="checkbox" value="Scissor" name="rps" id="scissor" />
+									<label for="scissor">Scissor</label>
+								</fieldset>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for"donor">Organ Donor?</label>
+								<select data-role="slider" name="donor" id="donor">
+									<option value="off">No</option>
+									<option value="on">Yes</option>
+								</select>
+							</div>
+
+							<div data-role="fieldcontain">
+							<label for="soa">Scale of Awesomeness </label>
+							<input type="range" name="soa" id="soa" min="1" max="10" value="5">
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for="cat">Category   *</label>
+								<select name="cat" id="cat" class="required">
+									<option data-placeholder="true">Select Category</option>
+									<option value="Friend">Friend</option>
+									<option value="Family">Family</option>
+									<option value="Co-Worker">Co-Worker</option>
+									<option value="Frienemy">Frienemy</option>
+									<option value="Aquentence">Aquentence</option>
+								</select>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for="quotes">Best Quotes </label>
+								<textarea name="quotes" id="quotes" placeholder='"I wish my name was Press Firmly..."'></textarea>
+							</div>
+
+							<div data-role="fieldcontain">
+								<label for="notes">Notes </label>
+								<textarea name="notes" id="notes" placeholder="-really likes cheese"></textarea>
+							</div>
+				<input type="submit" id="addPeep" value="Add Peep!" data-theme="b"/>
+				<input type="reset" value="Reset">
+			</form>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!--Catagories-->
+	<div data-role="page" id="catagoriesPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Catagories</h1>
+		</div>
+
+		<div data-role="content">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-c" style="height:100px">
+						<a href="#familyPage" id="famPagebtn">
+						<img src="images/Family.png">
+						</a>
+						<p align="center">Family</p>
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-c" style="height:100px">
+						<a href="#coworkerPage" id="cowoPagebtn">
+						<img src="images/Co-Worker.png">
+						</a>
+						<p align="center">Co-Workers</p>
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-c" style="height:100px">
+						<a href="#friendPage"id="friendPagebtn">
+						<img src="images/Friend.png">
+						</a>
+						<p align="center">Friends</p>
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-c" style="height:100px">
+						<a href="#frienemyPage" id="frienemyPagebtn">
+						<img src="images/Frienemy.png">
+						</a>
+						<p align="center">Frienemies</p>
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-c" style="height:100px">
+						<a href="#aquentencesPage" id="aquetPagebtn">
+						<img src="images/Aquentence.png">
+						</a>
+						<p align="center">Aquantences</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!--SearchPage-->
+	<div data-role="page" id="searchPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Search</h1>
+		</div>
+		<div data-role="content" id="searchContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</div>
+<!--FamilyPage-->
+	<div data-role="page" id="familyPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Family</h1>
+		</div>
+		<div data-role="content" id="familyContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</div>
+<!--Co-Workers-->
+	<div data-role="page" id="coworkerPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Co-Workers</h1>
+		</div>
+		<div data-role="content" id="cowoContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</div>
+<!--Friends-->
+	<div data-role="page" id="friendPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Friends</h1>
+		</div>
+		<div data-role="content" id="friendContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</div>
+<!--Frienemies-->
+	<div data-role="page" id="frienemyPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Frienemies</h1>
+		</div>
+		<div data-role="content" id="frienemyContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+<!--Aquentences-->
+	<div data-role="page" id="aquentencesPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Aquentences</h1>
+		</div>
+		<div data-role="content" id="aquentencesContents">
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+<!--About-->
+	<div data-role="page" id="aboutPage" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>About</h1>
+		</div>
+		<div data-role="content" id="searchContents">
+			<h2>The Peep Cheat Sheet</h2>
+			<p>It's easy to remember things about your peeps when you use The Peep Cheat Sheet.  Try it today!</p>
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Git Pages Links</h3>
+					<p>
+						<a href="http://b43195.github.com/AB_MIU_WK3_GOLD/index.html">Gold App</a>
+						<a href="http://b43195.github.com/AB_MIU_WK3_BRONZE/index.html">Bronze App</a>
+					</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true"data-theme="a">
+					<h3>Git Repo Link</h3>
+					<p>
+						<a href="https://github.com/b43195/AB_MIU_WK3_GOLD.git">Project Repo</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="homePage">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#homePage" data-icon="home" data-iconpos="bottom">Home</a></li>
+					<li><a href="#searchPage" data-icon="search" data-iconpos="bottom" id="searchNavBtn">Search</a></li>
+					<li><a href="#aboutPage "data-icon="info" data-iconpos="bottom">About</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+	<!-- JavaScript under here -->
+
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
+</body>
+</html>
