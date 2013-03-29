@@ -24,14 +24,14 @@
 </head>
 <body>
 <!--Main Page-->
-	<div data-role="page" id="homePage" data-theme="a" style="background: black url(images/background.jpg) no-repeat fixed">
+	<div data-role="page" id="homePage" data-theme="b" style="background: black url(images/background.jpg) no-repeat fixed" data-theme="b">
 		<!-- <div data-role="header" data-position="fixed">
 			<h1>Home</h1>
 		</div> -->
 		<div data-role="content" align="center">
 			<a href="#addPeepPage"><img src="images/pcs_feature.png"/></a>
-			<ul data-role="listview" data-inset="true">
-				<li><a href="#addPeepPage"data-transition="slidefade">Add Peep</a></li>
+			<ul data-role="listview" data-inset="true" data-theme="a">
+				<li><a href="#addPeepPage"data-transition="slidefade" data-theme="a">Add Peep</a></li>
 				<li><a href="#catagoriesPage"data-transition="slidefade">Browse Peeps</a></li>
 			</ul>
 			<div data-role="collapsible" data-collapsed="true" data-theme="a">
@@ -77,12 +77,13 @@
 	</div>
 	</div>
 <!--Add Peep Page-->
-	<div data-role="page" id="addPeepPage" data-theme="a" add-back-btn="true" style="background: black url(images/background.jpg) no-repeat">
+	<div data-role="page" id="addPeepPage" data-theme="a" add-back-btn="true" data-theme="a" style="background: black url(images/background.jpg) no-repeat">
 		<div data-role="header" data-position="fixed">
 			<h1>Add a Peep</h1>
 		</div>
 
 		<div data-role="content">
+			<img src="images/pcs_text.png">
 			<div id="peepForm">
 				<div data-role="controlgroup" data-type="horizontal" align="center">
 					<a href="#searchPage" id="displayData" data-role="button">Show Data</a>  
@@ -192,7 +193,7 @@
 		<div data-role="header" data-position="fixed">
 			<h1>Catagories</h1>
 		</div>
-
+		<img src="images/pcs_text.png">
 		<div data-role="content">
 			<div class="ui-grid-a">
 				<div class="ui-block-a">
@@ -254,6 +255,7 @@
 		<div data-role="header" data-position="fixed">
 			<h1>Search</h1>
 		</div>
+		<img src="images/pcs_text.png">
 		<div data-role="content" id="searchContents">
 		</div>
 		<div data-role="footer" data-position="fixed" data-id="homePage">
@@ -363,8 +365,8 @@
 			<h1>About</h1>
 		</div>
 		<div data-role="content" id="searchContents">
-			<h2>The Peep Cheat Sheet</h2>
-			<p>It's easy to remember things about your peeps when you use The Peep Cheat Sheet.  Try it today!</p>
+			<img src="images/pcs_text.png">
+			<p>It's easy to remember things about your peeps when you use The Peep Cheat Sheet.</p>
 			<div data-role="collapsible-set">
 				<div data-role="collapsible" data-collapsed="true" data-theme="a">
 					<h3>Git Pages Links</h3>

@@ -191,8 +191,21 @@ var editItem = function(){
 	addPeep.removeEventListener("Click", parsePeepForm);
 	addPeep.value = "Edit Contact";
 	var editPeep = addPeep;
-	editPeep.addEventListener("click", parsePeepForm);
 	editPeep.key = this.key;
+
+	say(key);
+
+	var addPeepForm = $("#addPeepForm");
+	addPeepForm.validate({
+		invalidHandler: function(form, validator){},
+		submitHandler:function(){
+			var peepData = addPeepForm.serializeArray();
+			var key = editPeep.key;
+			parsePeepForm(peepData,key);
+			document.location.href = "index.html#searchPage"
+			//showAllPeeps();
+		}
+	});
 }
 
 var showAllPeeps = function(){
@@ -246,7 +259,7 @@ var showAllPeeps = function(){
 			addSubUl.appendChild(editDeleteLks);
 		}
 
-
+		
 
 		createEditDeleteLks(storeKey,addSubUl);
 	}
@@ -585,6 +598,10 @@ $(document).ready(function(){
 	
 	
 });
+
+/*$("#homePage").live('pageinit',function(){
+	$("#addPeep").listview("refresh");
+    });*/
 
 //Event Listeners
 displayData.addEventListener("click", showAllPeeps);
